@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statistiques NDVI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #006400;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #006400;
+            color: #fff;
+        }
+        td {
+            background-color: #ffffff;
+        }
+        .analysis {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Statistiques NDVI - Analyse par Année et Période</h1>
+
+    <table>
+        <tr>
+            <th>Année</th>
+            <th>Période</th>
+            <th>NDVI Min</th>
+            <th>NDVI Moyenne</th>
+            <th>NDVI Max</th>
+        </tr>
+        <!-- Données 2016 -->
+        <tr>
+            <td>2016</td>
+            <td>Période Sèche</td>
+            <td>-0.0149</td>
+            <td>0.3224</td>
+            <td>0.4700</td>
+        </tr>
+        <tr>
+            <td>2016</td>
+            <td>Période Pluvieuse</td>
+            <td>-0.1682</td>
+            <td>0.4996</td>
+            <td>0.7997</td>
+        </tr>
+        <!-- Données 2020 -->
+        <tr>
+            <td>2020</td>
+            <td>Période Sèche</td>
+            <td>-0.1131</td>
+            <td>0.2951</td>
+            <td>0.5561</td>
+        </tr>
+        <tr>
+            <td>2020</td>
+            <td>Période Pluvieuse</td>
+            <td>-0.0310</td>
+            <td>0.2873</td>
+            <td>0.6719</td>
+        </tr>
+        <!-- Données 2023 -->
+        <tr>
+            <td>2023</td>
+            <td>Période Sèche</td>
+            <td>-0.1013</td>
+            <td>0.2303</td>
+            <td>0.4479</td>
+        </tr>
+        <tr>
+            <td>2023</td>
+            <td>Période Pluvieuse</td>
+            <td>-0.1182</td>
+            <td>0.3891</td>
+            <td>0.6032</td>
+        </tr>
+    </table>
+
+    <div class="analysis">
+        <h2>Analyse des Données NDVI</h2>
+        <p>Le NDVI (Normalized Difference Vegetation Index) est un indicateur de la santé de la végétation. Les valeurs de NDVI varient généralement entre -1 et +1 :</p>
+        <ul>
+            <li><strong>Valeurs négatives</strong> : Indiquent la présence d'eau ou de surfaces sans végétation.</li>
+            <li><strong>Valeurs proches de 0</strong> : Correspondent à des surfaces nues ou peu végétalisées.</li>
+            <li><strong>Valeurs positives élevées</strong> : Reflètent une végétation dense et en bonne santé.</li>
+        </ul>
+        
+        <h3>Comparaison entre les Années</h3>
+        <p>En comparant les données de 2016, 2020 et 2023 :</p>
+        <ul>
+            <li>En période sèche, le NDVI moyen diminue de 2016 à 2023, indiquant une baisse de la couverture végétale durant cette période.</li>
+            <li>En période pluvieuse, les valeurs de NDVI montrent une légère diminution entre 2016 et 2020, puis une augmentation en 2023, suggérant une régénération partielle de la végétation.</li>
+            <li>Les valeurs maximales de NDVI sont plus élevées en période pluvieuse, ce qui est attendu en raison de la croissance accrue des plantes durant cette période.</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>Les résultats montrent une variabilité interannuelle significative de la végétation autour de la Réserve Naturelle de Mabi-Yaya. La diminution des valeurs de NDVI en période sèche peut être due à des pressions anthropiques telles que l'exploitation forestière ou l'agriculture. La récupération partielle observée en période pluvieuse en 2023 pourrait indiquer une amélioration des pratiques de gestion ou des conditions climatiques favorables.</p>
+    </div>
+    <div style="position: fixed; bottom: 10px; left: 20px; font-size: 14px; color: #444444; background-color: #f8f8f8; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        Réalisé par KOFFI Djaha Levix Nadir, le 09/11/2024
+    </div>
+</body>
+</html>

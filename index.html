@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="yes">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="./resources/ol.css">
+    <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+    <link href="resources/ol-geocoder.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+    <link rel="stylesheet" href="./resources/qgis2web.css">
+    <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control > * {
+            background-color: #f8f8f8!important;
+            color: #444444!important;
+            border-radius: 0px;
+        }
+        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
+            color: #444444!important;
+        }
+        .search-layer-input-search {
+            background-color: #f8f8f8!important;
+        }
+        .ol-control > *:focus, .ol-control >*:hover {
+            background-color: rgba(248, 248, 248, 0.7)!important;
+        }
+        .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 2px !important;
+        }
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        /* Styles pour la légende */
+        #legend {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #444;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 1px solid #444;
+        }
+        .color-beige {
+            background-color: #f5deb3; /* Beige */
+        }
+        .color-light-green {
+            background-color: #98fb98; /* Vert clair */
+        }
+        .color-dark-green {
+            background-color: #006400; /* Vert foncé */
+        }
+        /* Styles pour le titre */
+        #title {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border: 2px solid #006400;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #006400;
+            font-weight: bold;
+            text-align: center;
+            z-index: 1000; /* Toujours au-dessus des autres éléments */
+        }
+    </style>
+    <title>Carte Interactive</title>
+</head>
+<body>
+    <!-- Titre -->
+    <div id="title">
+        Carte Interactive - Couverture Forestière près de la Réserve Naturelle de Mabi-Yaya en 2016, 2020 et 2023
+    </div>
+
+    <div id="map">
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+    <div style="position: fixed; bottom: 50px; right: 20px; z-index: 1000;">
+        <button id="explore-stats" style="padding: 10px 20px; background-color: #006400; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+            Explorer les Données Statistiques
+        </button>
+    </div>
+
+    <!-- Légende -->
+    <div id="legend">
+        <div class="legend-item">
+            <div class="legend-color color-beige"></div>
+            <span>Eau, surfaces sans végétation, objets construits</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color color-light-green"></div>
+            <span>Surfaces nues ou peu végétalisées</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color color-dark-green"></div>
+            <span>Végétation dense et en bonne santé</span>
+        </div>
+        <div style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 14px; color: #444444; background-color: #f8f8f8; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+            Réalisé par KOFFI Djaha Levix Nadir, le 09/11/2024
+        </div>
+    </div>
+
+    <script src="resources/qgis2web_expressions.js"></script>
+    <script src="resources/proj4.js"></script>
+    <script>
+        proj4.defs('EPSG:3857','+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs');
+    </script>
+    <script src="./resources/functions.js"></script>
+    <script src="./resources/ol.js"></script>
+    <script src="./resources/ol-layerswitcher.js"></script>
+    <script src="resources/ol-geocoder.js"></script>
+    <script src="./layers/layers.js" type="text/javascript"></script>
+    <script src="./resources/Autolinker.min.js"></script>
+    <script src="./resources/qgis2web.js"></script>
+    <script>
+        document.getElementById('explore-stats').onclick = function() {
+            window.location.href = 'stats.html';
+        };
+    </script>
+</body>
+</html>
